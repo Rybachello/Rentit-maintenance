@@ -3,6 +3,8 @@ package com.example.maintenance.application.dto;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import com.example.common.rest.ResourceSupport;
+
+import javax.persistence.Embeddable;
 import java.math.BigDecimal;
 
 /**
@@ -11,9 +13,8 @@ import java.math.BigDecimal;
 
 @Data
 @EqualsAndHashCode
-public class PlantInventoryEntryDTO extends ResourceSupport {
+@Embeddable
+public class PlantInventoryItemDTO extends ResourceSupport {
     private String _id;
-    private String name;
-    private String description;
-    private BigDecimal price;
+    private String href;
 }

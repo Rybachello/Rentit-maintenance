@@ -1,5 +1,7 @@
 package com.example.maintenance.domain.model;
 
+import com.example.common.domain.model.BusinessPeriod;
+import com.example.maintenance.application.dto.PlantInventoryItemDTO;
 import lombok.*;
 
 import javax.persistence.*;
@@ -18,8 +20,10 @@ public class MaintenanceTask {
 
     String description;
 
+    BusinessPeriod period;
+
     @Enumerated(EnumType.STRING)
     TypeOfWork typeOfWork;
 
-    String plantItemId;
+    PlantInventoryItemDTO plantItem;
 }
