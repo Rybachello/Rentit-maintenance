@@ -13,7 +13,7 @@ import java.util.List;
  */
 @Repository
 public interface MaintenanceTaskRepository extends JpaRepository<MaintenanceTask, String> {
-    @Query("SELECT t FROM MaintenanceTask WHERE t.plantItem._id = ?1 AND t.period.startDate < ?3 AND t.period.endDate > ?2")
+    @Query("SELECT t FROM MaintenanceTask t WHERE t.plantId = ?1 AND t.period.startDate < ?3 AND t.period.endDate > ?2")
     List<MaintenanceTask> findPlantTasksInPeriod(String plantId, LocalDate startDate, LocalDate endDate);
 
 }

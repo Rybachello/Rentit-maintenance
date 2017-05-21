@@ -15,16 +15,17 @@ import javax.persistence.*;
 public class MaintenanceTaskDTO {
     String description;
 
-    BusinessPeriodDTO period;
+    BusinessPeriodDTO maintenancePeriod;
 
     @Enumerated(EnumType.STRING)
     TypeOfWork typeOfWork;
 
-    @Embedded
-    @AttributeOverrides({
-            @AttributeOverride(name="_id", column=@Column(name="plant_id")),
-            @AttributeOverride(name="href", column=@Column(name="plant_href"))
-    })
-    PlantInventoryItemDTO plantItem;
+//    @Embedded
+//    @AttributeOverrides({
+//            @AttributeOverride(name="_id", column=@Column(name="plant_id")),
+//            @AttributeOverride(name="href", column=@Column(name="plant_href"))
+//    })
+//    PlantInventoryItemDTO plantItem;
+    String plantId;
 }
 

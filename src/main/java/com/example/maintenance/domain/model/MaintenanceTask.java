@@ -1,10 +1,15 @@
 package com.example.maintenance.domain.model;
 
 import com.example.common.domain.model.BusinessPeriod;
-import com.example.maintenance.application.dto.PlantInventoryItemDTO;
-import lombok.*;
+import lombok.AccessLevel;
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
 
-import javax.persistence.*;
+import javax.persistence.Entity;
+import javax.persistence.EnumType;
+import javax.persistence.Enumerated;
+import javax.persistence.Id;
 
 /**
  * Created by Vasiliy on 2017.02.20.
@@ -25,5 +30,6 @@ public class MaintenanceTask {
     @Enumerated(EnumType.STRING)
     TypeOfWork typeOfWork;
 
-    PlantInventoryItemDTO plantItem;
+    String plantId;
+    //PlantInventoryItemDTO plantItem;
 }

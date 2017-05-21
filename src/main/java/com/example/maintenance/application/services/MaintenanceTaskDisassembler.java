@@ -1,9 +1,7 @@
 package com.example.maintenance.application.services;
 
 
-import com.example.common.application.dto.BusinessPeriodDTO;
 import com.example.common.application.services.BusinessPeriodDisassembler;
-import com.example.common.domain.model.BusinessPeriod;
 import com.example.maintenance.application.dto.MaintenanceTaskDTO;
 import com.example.maintenance.domain.model.MaintenanceTask;
 import com.example.maintenance.infrastructure.IdentifierFactory;
@@ -23,8 +21,8 @@ public class MaintenanceTaskDisassembler {
         return MaintenanceTask.of(
                 IdentifierFactory.nextID(),
                 dto.getDescription(),
-                businessPeriodDisassembler.toResources(dto.getPeriod()),
+                businessPeriodDisassembler.toResources(dto.getMaintenancePeriod()),
                 dto.getTypeOfWork(),
-                dto.getPlantItem());
+                dto.getPlantId());
     }
 }

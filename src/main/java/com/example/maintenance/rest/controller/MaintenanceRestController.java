@@ -25,7 +25,7 @@ public class MaintenanceRestController {
         return new ResponseEntity<>(Boolean.TRUE, headers, HttpStatus.CREATED);
     }
 
-    @GetMapping("/tasks")
+    @PostMapping("/tasks/check")
     public Boolean checkForMaintenance(@RequestBody MaintenanceTaskDTO taskDTO) {
         Boolean b = maintenanceService.checkForMaintenance(taskDTO);
         return b;

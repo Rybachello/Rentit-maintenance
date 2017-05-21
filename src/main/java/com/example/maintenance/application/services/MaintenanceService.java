@@ -1,7 +1,6 @@
 package com.example.maintenance.application.services;
 
 import com.example.common.application.services.BusinessPeriodAssembler;
-import com.example.common.application.services.BusinessPeriodDisassembler;
 import com.example.maintenance.application.dto.MaintenanceTaskDTO;
 import com.example.maintenance.domain.model.MaintenanceNotificationDTO;
 import com.example.maintenance.domain.model.MaintenanceTask;
@@ -43,19 +42,19 @@ public class MaintenanceService {
 
     private void notifyRentit(MaintenanceTask task) {
         MaintenanceNotificationDTO note = new MaintenanceNotificationDTO();
-        note.setPeriod(businessPeriodAssembler.toResources(task.getPeriod()));
-        note.setPlantItem(task.getPlantItem());
+        note.setMaintenancePeriod(businessPeriodAssembler.toResources(task.getPeriod()));
+        note.set_id(task.getPlantId());
         restTemplate.postForObject(
-                "http://localhost:8090/api/maintenance/confirm",
+                "http://localhost:8090/api/inventory/maintenance/plants",
                 note,
                 String.class);
     }
 
     public Boolean checkForMaintenance(MaintenanceTaskDTO task) {
         List<MaintenanceTask> tasks = repository.findPlantTasksInPeriod(
-                task.getPlantItem().get_id(),
-                task.getPeriod().getStartDate(),
-                task.getPeriod().getEndDate());
+                task.getPlantId(),
+                task.getMaintenancePeriod().getStartDate(),
+                task.getMaintenancePeriod().getEndDate());
         return tasks.size()>0;
     }
 }
