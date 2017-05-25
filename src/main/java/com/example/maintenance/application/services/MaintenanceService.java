@@ -2,7 +2,7 @@ package com.example.maintenance.application.services;
 
 import com.example.common.application.services.BusinessPeriodAssembler;
 import com.example.maintenance.application.dto.MaintenanceTaskDTO;
-import com.example.maintenance.domain.model.MaintenanceNotificationDTO;
+import com.example.maintenance.application.dto.MaintenanceNotificationDTO;
 import com.example.maintenance.domain.model.MaintenanceTask;
 import com.example.maintenance.domain.repository.MaintenanceTaskRepository;
 import org.springframework.beans.factory.annotation.Autowired;
