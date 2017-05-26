@@ -1,4 +1,4 @@
-package com.example.maintenance.domain.model;
+package com.example.maintenance.application.dto;
 
 import com.example.common.application.dto.BusinessPeriodDTO;
 import lombok.Data;
