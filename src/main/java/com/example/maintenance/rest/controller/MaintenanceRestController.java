@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.*;
  * Created by Rybachello on 3/11/2017.
  */
 @RestController
+@CrossOrigin()
 @RequestMapping("/api/maintenances")
 public class MaintenanceRestController {
     @Autowired
